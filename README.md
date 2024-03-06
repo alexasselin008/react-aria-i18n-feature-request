@@ -1,5 +1,12 @@
 # React-Aria i18n feature request
 
+## This repo:
+
+- This repo is a copy of the react-aria-starter kit. I removed the unused components.
+- I added a simple useLocalizedString hook that uses the useLocalizedStringFormatter hook from @react-aria/i18n.
+- I added a pending state to the button, using the useLocalizedString hook to get the localized string.
+- I added tsup to build the project.
+
 ## Problem
 
 Currently, React-aria does not export the type LocalizedStringFormatter from the package. This makes it difficult to use the useLocalizedStringFormatter hook in a TypeScript project.
