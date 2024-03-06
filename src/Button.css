@@ -1,0 +1,80 @@
+@import "./theme.css";
+
+.react-aria-Button {
+    display:grid;
+    grid-template-areas: "spinner label";
+    grid-template-columns: min-content auto;
+    align-items: center;
+  color: var(--text-color);
+  background: var(--button-background);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  appearance: none;
+  vertical-align: middle;
+  font-size: 1rem;
+  text-align: center;
+  margin: 0;
+  outline: none;
+  padding: 6px 10px;
+  text-decoration: none;
+
+  &[data-pressed] {
+    box-shadow: inset 0 1px 2px rgb(0 0 0 / 0.1);
+    background: var(--button-background-pressed);
+    border-color: var(--border-color-pressed);
+  }
+
+  &[data-focus-visible] {
+    outline: 2px solid var(--focus-ring-color);
+    outline-offset: -1px;
+  }
+
+  &[data-disabled]{
+    border-color: var(--border-color-disabled);
+    color: var(--text-color-disabled);
+  }
+
+  &[data-pending] .content {
+    visibility: hidden;
+  }
+
+  .content {
+    grid-area: content;
+  }
+}
+.react-aria-ProgressBar {
+    position: absolute;
+    justify-self: center;
+    display: grid;
+    grid-template-areas: "spinner label";
+}
+.spinner__track {
+    box-sizing: border-box;
+    inline-size: 1.25rem;
+    block-size: 1.25rem;
+    border-radius: 9999px;
+    border: 0.2rem solid currentcolor;;
+    opacity: 0.2;
+    grid-area: spinner;
+}
+
+.spinner__fill {
+    box-sizing: border-box;
+    inline-size: 1.25rem;
+    block-size: 1.25rem;
+    border-radius: 9999px;
+    border: 0.2rem solid transparent;
+    border-inline-start: 0.2rem solid currentcolor;
+    grid-area: spinner;
+    animation: spin .8s infinite linear;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
